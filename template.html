@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar AlipneJS</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+
+  <!-- <div x-data="{nama : 'Alwin Dev', angka : 4, link: ' <a href=\'https://youtube.com\'>Youtube</a>'} " class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow"> -->
+   
+    <div x-data="{open : false }" 
+    class="container mx-auto w-1/2 text-center mt-10 bg-lime-200 p-10 rounded-xl shadow">
+    <!--! fungsi expersi di text -->
+    <!-- <h1  class="text-5xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm">
+        hallo, <span x-text="angka"></span>
+        <span>adalah bilangan : </span>
+        <span x-text="angka % 2 === 0 ? 'Genap' : 'Ganjil' "></span>
+    </h1> -->
+
+    <!--! Menambahkan element html  x-html  (tidak bisa menggunakan x-text) -->
+    <!-- <h1  class="text-5xl font-bold bg-gradient-to-r from-blue-500 to-pink-400 bg-clip-text text-transparent drop-shadow-sm">
+       klik nama ini, <span x-html="link"></span>
+    </h1> -->
+
+    <!--! Menggunakan Toggling Element x-show / x-if -->
+    <!-- <button x-on:click="open = ! open" x-text="open ? 'Tutup' : 'Buka' " class="py-2 px-5 bg-slate-600 text-white rounded-md">Buka</button>
+    <div x-show="open" class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white">
+        Hai Alwin selamat belajar AlpineJS
+    </div> -->
+
+    <!--! Cara menggunakan x-if (wajin menggunakan tag Template)-->
+    <!-- <button x-on:click="open = ! open" x-text="open ? 'Tutup' : 'Buka' " class="py-2 px-5 bg-slate-600 text-white rounded-md">Buka</button>
+    <template x-if="open">
+        <div class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white">
+            Hai Alwin selamat belajar AlpineJS
+        </div>
+    </template> -->
+
+    <!--! Kita bisa menambahkan transition x-transition -->
+    <!-- <button x-on:click="open = ! open" x-text="open ? 'Tutup' : 'Buka' " class="py-2 px-5 bg-slate-600 text-white rounded-md">Buka</button>
+    <div x-show="open" x-transition.origin.left.duration.1000ms  class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white">
+        Hai Alwin selamat belajar AlpineJS
+    </div> -->
+
+    <!-- ! Kita merubah warna button buka dan tutup ya dengan mengguakan Binding Attributes x-bind (bisa class, property css, bisa keadaan disble) -->
+    <button x-on:click="open = ! open" x-text="open ? 'Tutup' : 'Buka' " 
+            x-bind:class="open ? 'bg-red-600' : 'bg-cyan-600'"
+            class="py-2 px-5 text-white rounded-md">Buka</button>
+    <div x-show="open" x-transition.origin.left.duration.1000ms  class="w-3/4 mx-auto mt-4 p-5 bg-blue-400 rounded text-white">
+        Hai Alwin selamat belajar AlpineJS
+
+    </div>
+    
+
+
+  </div>
+    
+</body>
+</html>

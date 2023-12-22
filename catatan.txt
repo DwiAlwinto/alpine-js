@@ -1,0 +1,1 @@
+State biasa dibuat secara local dan secara global.
